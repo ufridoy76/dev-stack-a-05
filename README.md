@@ -1,32 +1,33 @@
-# React + TypeScript + Vite
+Project Name:
+#Dev Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Description:
+## About
+DevStack is a modern web application for exploring different technologies main libraries used in .React js.
 
-Currently, two official plugins are available:
+## Technologies Used
+- React
+- TypeScript
+- Tailwind CSS
+- Daisy UI
+- JSON file data
+- Vite
+- React Toastify
+- React Icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+-  Explore different technologies
+-  Technology bookmarking
+-  Fully responsive design
+-  Modern gradient-based UI
 
-## React Compiler
+Answers:
+1. JSX is a JavaScript syntax extension that lets you write HTML-like code.
+2. Props pass data from a parent to a  child component. State is a component's own data that can change child to setState on change UI.
+3. The useState hook stores and updates data inside a React component; I use it to manage and change the UI.
+4. The useEffect hook performs a load JSON data-loading side effect.
+5. Every item in a .map() list needs a unique key prop from an array of objects; each data identify each data self unique ID. It helps React efficiently identify which items have changed, been added, or removed.
+6. I used it to show an empty stack message when the stack has no items. Stock.length === 0? "empty stock": "{} item in stock"
+7. Data is passed parent to child using props. child data send back parent passes call bacjk function
+   
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
