@@ -21,7 +21,6 @@ const AllTechs = ({
           technology={technology}
           selectedStack={selectedStack}
           setSelectedStack={setSelectedStack}
-          //   stactCount={stactCount} setStackCount={setStackCount}
         ></TechCard>
       ))}
     </div>

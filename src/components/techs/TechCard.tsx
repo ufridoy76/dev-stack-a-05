@@ -10,7 +10,6 @@ const TechCard = ({
   selectedStack: ITechnology[];
   setSelectedStack: Dispatch<SetStateAction<ITechnology[]>>;
 }) => {
-  // console.log(technology);
   const { name, badge, category, description, difficulty, icon, rating } =
     technology;
 
@@ -34,7 +33,7 @@ const TechCard = ({
   };
 
   return (
-    <div className="group rounded-2xl  border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-xl">
+    <div className="group rounded-2xl border shadow-sm border-gray-100 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       {/* Top */}
       <div className="flex items-start justify-between">
         <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-50 p-3 shadow-sm">

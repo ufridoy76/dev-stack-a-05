@@ -13,7 +13,6 @@ const Technologies = ({
   setStackCount: Dispatch<SetStateAction<number>>;
 }) => {
   const technologies = use(technologiesPromise);
-  // const [stackCount, setStackCount] = useState(0);
   const [selectedStack, setSelectedStack] = useState<ITechnology[]>([]);
 
   return (
@@ -22,7 +21,7 @@ const Technologies = ({
       <div className="mb-8">
         <h1 className="text-3xl sm:text-4xl font-extrabold">
           Explore{" "}
-          <span className="bg-linear-to-r from-fuchsia-500 to-violet-500 bg-clip-text text-transparent">
+          <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--brand-gradient)" }}>
             Technologies
           </span>
         </h1>

@@ -3,7 +3,8 @@ import Logo from "./../../assets/logo-text.png";
 
 const Navbar = () => {
   return (
-      <nav className="navbar container mx-auto">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-base-100">
+      <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,8 +58,8 @@ const Navbar = () => {
             Sign Up
           </button>
         </div>
-      </nav>
-
+      </div>
+    </nav>
   );
 };
 

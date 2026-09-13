@@ -1,8 +1,5 @@
 @import "tailwindcss";
 @plugin "daisyui";
-
-
-
 .plus-jakarta {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
@@ -18,4 +15,13 @@
 
 body{
   font-family: "Plus Jakarta Sans";
+}
+
+:root {
+  --brand-gradient: linear-gradient(
+    90deg,
+    #f97316,
+    #ec4899,
+    #8b5cf6
+  );
 }

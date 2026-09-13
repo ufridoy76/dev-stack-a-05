@@ -8,11 +8,11 @@ import Technologies from "./components/techs/Technologies";
 import { ToastContainer } from "react-toastify";
 
 const technologiesPromise = async (): Promise<ITechnology[]> => {
-  const res = await fetch("./data.json");
+  const res = await fetch("/data.json");
   const data = await res.json();
   return data;
 };
-// console.log(dataPromise);
+
 
 function App() {
   const [stackCount, setStackCount] = useState<number>(0);

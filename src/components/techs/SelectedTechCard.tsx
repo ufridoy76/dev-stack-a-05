@@ -1,7 +1,6 @@
 import { type Dispatch, type SetStateAction } from "react";
 import type { ITechnology } from "../../types/technology";
 import { Bounce, toast } from "react-toastify";
-import { CiCircleRemove } from "react-icons/ci";
 import { TbXboxXFilled } from "react-icons/tb";
 
 const SelectedTechCard = ({
