@@ -5,6 +5,7 @@ import Banner from "./components/common/Banner";
 import Footer from "./components/common/Footer";
 import type { ITechnology } from "./types/technology";
 import Technologies from "./components/techs/Technologies";
+import { ToastContainer } from "react-toastify";
 
 const technologiesPromise = async (): Promise<ITechnology[]> => {
   const res = await fetch("./data.json");
@@ -30,6 +31,7 @@ function App() {
         ></Technologies>
       </Suspense>
       <Footer></Footer>
+      <ToastContainer />
     </>
   );
 }

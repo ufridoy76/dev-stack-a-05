@@ -1,5 +1,6 @@
 import { useState, type Dispatch, type SetStateAction } from "react";
 import type { ITechnology } from "../../types/technology";
+import { Bounce, toast } from "react-toastify";
 
 const TechCard = ({
   technology,
@@ -7,7 +8,7 @@ const TechCard = ({
 }: {
   technology: ITechnology;
   selectedStack: ITechnology[];
-    setSelectedStack: Dispatch<SetStateAction<ITechnology[]>>;
+  setSelectedStack: Dispatch<SetStateAction<ITechnology[]>>;
 }) => {
   // console.log(technology);
   const { name, badge, category, description, difficulty, icon, rating } =
@@ -17,11 +18,20 @@ const TechCard = ({
 
   const handleAddToStack = () => {
     setIsStackAdd(true);
-    // setSelectedStack((prev) => [...prev, technology]);
 
-    // setSelectedStack([...selectedStack, technology])
+    setSelectedStack((prev) => [...prev, technology]);
+    toast.success("Stack Successfully Added!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
-
 
   return (
     <div className="group rounded-2xl  border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-xl">

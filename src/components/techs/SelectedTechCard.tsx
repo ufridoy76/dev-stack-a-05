@@ -1,6 +1,8 @@
 import { type Dispatch, type SetStateAction } from "react";
 import type { ITechnology } from "../../types/technology";
-import { MdDelete } from "react-icons/md";
+import { Bounce, toast } from "react-toastify";
+import { CiCircleRemove } from "react-icons/ci";
+import { TbXboxXFilled } from "react-icons/tb";
 
 const SelectedTechCard = ({
   tech,
@@ -14,13 +16,34 @@ const SelectedTechCard = ({
   const { icon, name, category } = tech;
 
   const handleRemoveStack = () => {
+    const ifExist = selectedStack.some((stack) => stack.id === tech.id);
+    if (!ifExist) {
+      toast.error("Stack Failed to Remove!", {
+        position: "bottom-right",
+        autoClose: 5000,
+        theme: "light",
+        transition: Bounce,
+      });
+      return;
+    }
     const restStack = selectedStack.filter((stack) => stack.name !== tech.name);
 
     setSelectedStack(restStack);
+    toast.success("Stack Successfully Removed!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   return (
-    <div className="flex justify-between h-20 items-center border rounded-xl p-3">
+    <div className="flex justify-between items-center border rounded-xl p-3">
       <div className="flex  gap-4">
         <img className="w-10" src={icon} alt="" />
         <div>
@@ -28,8 +51,8 @@ const SelectedTechCard = ({
           <p>{category}</p>
         </div>
       </div>
-      <span onClick={handleRemoveStack}>
-        <MdDelete />
+      <span onClick={handleRemoveStack} className="text-3xl text-red-600 rounded-ful">
+        <TbXboxXFilled />
       </span>
     </div>
   );
